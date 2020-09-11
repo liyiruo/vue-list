@@ -2,18 +2,21 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <title>学习vue-v-html</title>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 <body>
 <div id="app">
-    <p>{{ message }}</p>
+    <div v-html="message"></div>
 </div>
+
 
 <script>
     new Vue({
-        el:"#app",
-        data:{message:'你好，vue.js'}
+        el: '#app',
+        data: {
+            message: '<h1>h1号字体</h1>'
+        }
     })
 </script>
 </body>

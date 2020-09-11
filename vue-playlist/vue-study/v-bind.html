@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>学习vue </title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+
+
+
+
+<div id="app">
+    <label for="r1">修改颜色</label>
+    <input type="checkbox" v-model="use" id="r1">
+
+    <br>
+    <br>
+    <div v-bind:class="{'myclass':use}">v-bind:class 指令</div>
+</div>
+
+
+<script>
+new Vue({
+    el:'#app',
+    data:{
+        use:false
+    }
+
+})
+
+</script>
+
+
+<style>
+    .myclass{
+        background: yellow;
+        color: red;
+    }
+</style>
+
+</body>
+</html>
