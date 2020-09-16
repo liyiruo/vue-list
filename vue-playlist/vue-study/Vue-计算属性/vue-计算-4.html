@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue计算</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{site}}</p>
+</div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            name: 'Google',
+            url: 'http://www.google.com'
+        },
+        computed: {
+            site: {
+                get: function () {
+                    return this.name + ' ' + this.url;
+                },
+                set: function (newValue) {
+                    var names = newValue.split(' ');
+                    this.name = names[0];
+                    this.url = names[names.length - 1];
+                }
+            }
+        }
+    })
+
+    vm.site = '百度 http://www.baidu.com';
+    document.write('name:' + vm.name);
+    document.write('<br>')
+    document.write('url:' + vm.url);
+</script>
+</html>

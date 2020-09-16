@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue计算</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>原始字符串：{{message}}</p>
+    <p>计算后反转字符串：{{reversedMessage}}</p>
+    <br>
+    <p>方法2</p>
+    {{message.split('').reverse().join('')}}
+</div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            message: 'abcdefghijklmnopqrstuvwxyz'
+        },
+        computed:{
+            reversedMessage: function () {
+                return this.message.split('').reverse().join('');
+            }
+        }
+    })
+</script>
+</html>

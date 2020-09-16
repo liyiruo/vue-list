@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue计算</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{message.split('').reverse().join('')}}
+</div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            message: 'abcdefghijklmnopqrstuvwxyz'
+        }
+    })
+</script>
+</html>
