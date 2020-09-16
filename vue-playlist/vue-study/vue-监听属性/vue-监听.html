@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-监听</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p style="font-size:25px;">计数器: {{ counter }}</p>
+    <button @click="counter++" style="color: yellow">点我</button>
+</div>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            counter: 1
+        }
+    })
+    vm.$watch('counter', function (nval, oval) {
+        alert('计数器值的变化 :' + oval + ' 变为 ' + nval + '!');
+    });
+
+</script>
+</body>
+</html>
