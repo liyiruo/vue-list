@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>input 元素：</p>
+    <input v-model="message" placeholder="请编辑我……">
+    <p>{{message}}</p>
+
+
+    <p>textarea 元素：</p>
+    <p style="white-space: pre">{{message2}}</p>
+    <textarea v-model="message2" placeholder="多行文本输入……"></textarea>
+</div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            message:'liyiruo',
+            message2:'李依若\r\nwww.baidu.com'
+        }
+    })
+</script>
+</html>
