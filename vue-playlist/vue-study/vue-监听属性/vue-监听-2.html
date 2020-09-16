@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-监听</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    千米 : <input type="text" v-model="kilometers">
+    米 : <input type="text" v-model="meters">
+</div>
+<p id="info"></p>
+
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            kilometers: 0,
+            meters: 0
+        },
+        methods: {},
+        computed: {},
+        watch: {
+            kilometers: function (val) {
+                this.kilometers = val;
+                this.meters = this.kilometers * 1000;
+            },
+            meters: function (val) {
+                this.kilometers = val / 1000;
+                this.meters = val;
+            }
+        }
+    })
+
+    vm.$watch('kilometers', function (newValue, oldValue) {
+        document.getElementById("info").innerHTML = "修改前值为: " + oldValue + "，修改后值为: " + newValue;
+    })
+
+</script>
+</body>
+</html>
