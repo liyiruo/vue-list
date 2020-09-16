@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-绑定</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        .text-danger {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .active {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div v-bind:class="[errorClass ,isActive ? activeClass : '']"></div>
+</div>
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            isActive:false,
+            activeClass:'active',
+            errorClass:'text-danger '
+        }
+    })
+</script>
+</html>
