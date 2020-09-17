@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <liyiruo></liyiruo>
+</div>
+</body>
+<script>
+    Vue.component('liyiruo',{
+        template:'<h1>这个是自定义的组件</h1>'
+    })
+    new Vue({
+        el:'#app'
+    })
+</script>
+</html>
