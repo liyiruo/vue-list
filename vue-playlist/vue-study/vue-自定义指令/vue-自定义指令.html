@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>页面载入时，input 元素自动获取焦点：</p>
+    <input v-focus>
+</div>
+
+<script>
+    Vue.directive('focus',{
+        insert:function (el) {
+            el.focus();
+        }
+    })
+    new Vue({
+        el:'#app'
+    })
+</script>
+</body>
+</html>
