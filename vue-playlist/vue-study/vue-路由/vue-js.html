@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+
+</body>
+
+<script>
+    Vue.mixin({
+        created:function () {
+            var myObject = this.$options.myObject;
+            if (myObject){
+                document.write(myObject);
+            }
+
+        }
+    })
+    new Vue({
+        myObject: 'hello'
+    })
+</script>
+</html>
